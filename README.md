@@ -2,7 +2,7 @@
 
 -------------------------------------------------------------------------------
 
-This repository include assignments as a part of the EE232E in Spring 2017.
+Assignments done as a part of the EE232E in Spring 2017.
 
 The goal of assignments is to practice R and understand graph and networks.
 
