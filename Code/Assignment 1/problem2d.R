@@ -19,7 +19,7 @@ for (it in 1:iteration) {
     graph = barabasi.game(node, directed = FALSE)
 
     # Randomly pick a node i, and then randomly pick a neighbor j of that node
-	i = sample(1:num, 1)
+	i = sample(1:node, 1)
 	x = neighborhood(graph, 1, i)
 	y = c(x[[1]][-1])
 	j = sample(y, 1)
@@ -28,7 +28,7 @@ for (it in 1:iteration) {
 
 # Plot the degree distributions
 h <- hist(degree,
-          breaks = seq(from = 0, to = max(deg) + 1, by = 1),
+          breaks = seq(from = 0, to = max(degree) + 1, by = 1),
           freq = FALSE,
           main = "Degree distribution of nodes j with 1000 nodes",
           ylab = "Fraction of nodes",
