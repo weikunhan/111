@@ -10,7 +10,7 @@ The goal of assignments is split into 4 parts:
  2. Random walk	on random networks, the notion of PageRank
  3. Introduction to community finding algorithm
  4. Graph theory applications
-For more assignments details, please read the PDF document (Assigment 1-4 Description). 
+For more assignments details, please read the PDF document (Assignment 1-4 Description). 
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
