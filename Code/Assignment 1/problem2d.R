@@ -12,7 +12,7 @@ iteration <- 100
 degree <- numeric()
 
 # Create number of ieration undirected random networks
-for (it in 1:iteration) {
+for (i in 1:iteration) {
 
     # Create the undirected random network,
     # whose degree distribution is proportional to x^(-3)
