@@ -31,7 +31,7 @@ plot(sc, graph)
 
 # Print information
 cat("-------------------------Processing Finshed 1----------------------------------\n",
-    "Fast greedy method to find the community structure done.\n",
+    "Spinglass method to find the community structure done.\n",
     "The length of the community structure is: ", length(sc), "\n",
     "The modularity is: ", modularity(sc), "\n",
     "-------------------------------------------------------------------------------\n")
