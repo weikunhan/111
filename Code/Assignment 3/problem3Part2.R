@@ -1,0 +1,53 @@
+# EE 219 Homework 3 Problem 3 Part 2
+# Name: Weikun Han, Duzhi Chen
+# Date: 4/27/2017
+# Reference:
+#  - https://google.github.io/styleguide/Rguide.xml#indentation
+
+library("igraph")
+
+# Setup the file path to load data
+file_path <- "~/Documents/hw3/sorted_directed_net.txt"
+
+# Load graph from path
+graph <- read.graph(file = file_path, format = "ncol", directed = TRUE)
+
+# Find the giant connected component (GCC)
+cluster <- components(graph, mode = "strong")
+gcc_index <- which.max(cluster$csize)
+non_gcc_nodes <- (1:vcount(graph))[cluster$membership != gcc_index]
+gcc <- delete.vertices(graph, non_gcc_nodes)
+
+# Convert GCC into an undirected network
+gcc_undirected <- as.undirected(gcc, mode="collapse", edge.attr.comb = list(weight = "prod"))
+E(gcc_undirected)$weight <- sqrt(E(gcc_undirected)$weight)
+
+# Base on propagating labels to find the community structure
+lpc <- label.propagation.community(gcc_undirected)
+
+# Plot the community structure
+plot(lpc, gcc_undirected)
+
+# Print information
+print(lpc)
+print(sizes(lpc))
+cat("-------------------------Processing Finshed 1-----------------------------------\n",
+    "Base on propagating labels to find the community structure done.\n",
+    "The length of the community structure is: ", length(lpc), "\n",
+    "The modularity of the community structure is: ", modularity(lpc), "\n",
+    "--------------------------------------------------------------------------------\n")
+
+# Use fast greedy method to find the community structure
+fc <- fastgreedy.community(gcc_undirected)
+
+# Plot the community structure
+plot(fc, gcc_undirected)
+
+# Print information
+print(fc)
+print(sizes(fc))
+cat("-------------------------Processing Finshed 2-----------------------------------\n",
+    "Fast greedy method to find the community structure done.\n",
+    "The length of the community structure is: ", length(fc), "\n",
+    "The modularity of the community structure is: ", modularity(fc), "\n",
+    "--------------------------------------------------------------------------------\n")
