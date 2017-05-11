@@ -33,7 +33,7 @@ lc <- delete.vertices(gcc_undirected, non_lc_nodes)
 # Use fast greedy method to find the sub community structure
 fc_sub <- fastgreedy.community(lc)
 
-# Plot the sub community structure
+# Plot information
 plot(fc_sub, lc)
 
 # Print information
