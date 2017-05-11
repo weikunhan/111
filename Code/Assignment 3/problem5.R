@@ -35,7 +35,7 @@ for (i in 1:length(c_index)) {
     # Use fast greedy method to find the sub community structure
     fc_sub = fastgreedy.community(c)
 
-    # Plot the sub community structure
+    # Plot information
     plot(fc_sub, c)
 
     # Print information
