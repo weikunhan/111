@@ -22,7 +22,7 @@ gcc <- delete.vertices(graph, non_gcc_nodes)
 degree1 <- degree(gcc, mode = "in")
 degree2 <- degree(gcc, mode = "out")
 
-# Plot the degree distributions
+# Plot information
 h1 <- hist(degree1,
            breaks = seq(0, by = 1 , length.out = max(degree1) + 2),
            freq = FALSE,
