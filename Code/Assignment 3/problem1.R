@@ -35,5 +35,5 @@ gcc_index <- which.max(cluster$csize)
 non_gcc_nodes <- (1:vcount(graph))[cluster$membership != gcc_index]
 gcc <- delete.vertices(graph, non_gcc_nodes)
 
-# Plot the GCC
+# Plot information
 plot(gcc)
