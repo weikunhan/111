@@ -24,7 +24,7 @@ gcc_undirected <- as.undirected(gcc, mode = "each")
 # Base on propagating labels to find the community structure
 lpc <- label.propagation.community(gcc_undirected)
 
-# Plot the community structure
+# Plot information
 plot(lpc, gcc_undirected)
 
 # Print information
