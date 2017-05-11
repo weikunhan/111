@@ -26,7 +26,7 @@ for (i in 1:iteration) {
     degree = c(degree, degree(graph, j))
 }
 
-# Plot the degree distributions
+# Plot information
 h <- hist(degree,
           breaks = seq(from = 0, to = max(degree) + 1, by = 1),
           freq = FALSE,
