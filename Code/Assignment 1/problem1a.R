@@ -21,7 +21,7 @@ degree1 <- degree(graph1)
 degree2 <- degree(graph2)
 degree3 <- degree(graph3)
 
-# Plot the degree distributions
+# Plot information
 h1 <- hist(degree1,
            breaks = seq(-0.5, by = 1 , length.out = max(degree1) + 2),
            freq = FALSE,
