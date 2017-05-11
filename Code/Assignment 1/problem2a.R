@@ -16,7 +16,7 @@ graph <- barabasi.game(node, directed = FALSE)
 # Use degree fucntion to find a numeric vector of the same length as argument v
 degree <- degree(graph)
 
-# Plot the degree distributions
+# Plot information
 h <- hist(degree,
           breaks = seq(-0.5, by = 1 , length.out = max(degree) + 2),
           freq = FALSE,
