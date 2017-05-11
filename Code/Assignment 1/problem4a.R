@@ -1,4 +1,4 @@
-# EE 219 Homework 1 Problem 4 a
+# EE232E Homework 1 Problem 4 a
 # Name: Weikun Han, Duzhi Chen
 # Date: 4/14/2017
 # Reference:
