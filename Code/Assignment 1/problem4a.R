@@ -18,7 +18,7 @@ graph <- forest.fire.game(node, fw.prob = 0.37, bw.factor = 0.32/0.37, directed 
 degree1 <- degree(graph, mode = "in")
 degree2 <- degree(graph, mode = "out")
 
-# Plot the degree distributions
+# Plot information
 h1 <- hist(degree1,
            breaks = seq(0, by = 1 , length.out = max(degree1) + 2),
            freq = FALSE,
