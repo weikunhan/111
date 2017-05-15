@@ -16,13 +16,13 @@ for (i in 1:iteration) {
 
     # Create the undirected random network,
     # whose degree distribution is proportional to x^(-3)
-    graph = barabasi.game(node, directed = FALSE)
+    graph <- barabasi.game(node, directed = FALSE)
 
     # Randomly pick a node i, and then randomly pick a neighbor j of that node
-    i = sample(1:node, 1)
-    x = neighborhood(graph, 1, i)
-    y = c(x[[1]][-1])
-    j = sample(y, 1)
+    i <- sample(1:node, 1)
+    x <- neighborhood(graph, 1, i)
+    y <- c(x[[1]][-1])
+    j <- sample(y, 1)
     degree = c(degree, degree(graph, j))
 }
 
