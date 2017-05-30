@@ -10,7 +10,7 @@ library("igraph")
 file_path <- "/home/weikun/Downloads/finance_data/data/"
 
 # Set working directory
-#setwd(file_path)
+setwd(file_path)
 
 # Get the files names
 files <- list.files(path = file_path, pattern = "*.csv")
@@ -84,7 +84,8 @@ cat("--------------------------Processing Finshed 3 ----------------------------
     "-------------------------------------------------------------------------------\n")
 
 # Plot information
-hist(adjacency_matrix, 
+hist(adjacency_matrix,
+     breaks = 40,
      main = "Histogram for D (the length of the link connecting two different stock return time series i, j)", 
      xlab = "D value")
 
