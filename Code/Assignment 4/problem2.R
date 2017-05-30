@@ -10,7 +10,7 @@ library("igraph")
 file_path <- "/home/weikun/Downloads/finance_data/data/"
 
 # Set working directory
-setwd(file_path)
+#setwd(file_path)
 
 # Get the files names
 files <- list.files(path = file_path, pattern = "*.csv")
