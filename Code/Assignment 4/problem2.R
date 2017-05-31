@@ -93,7 +93,7 @@ hist(adjacency_matrix,
      xlab = "D value")
 
 # Load the graph from matrix
-graph <- graph.adjacency(adjacency_matrix, mode = "directed", weighted = TRUE)
+graph <- graph.adjacency(adjacency_matrix, mode = "undirected", weighted = TRUE)
 
 # Plot information
 plot(graph,
