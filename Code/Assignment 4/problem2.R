@@ -7,7 +7,7 @@
 library("igraph")
 
 # Setup the file path to load data
-file_path1 <- "/home/weikun/Downloads/finance_data/data/"
+file_path1 <- "/home/weikun/Downloads/finance_data/data"
 file_path2 <- "/home/weikun/Downloads/finance_data/Name_sector.csv"
 
 # Set working directory
