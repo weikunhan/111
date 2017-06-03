@@ -52,7 +52,7 @@ cat("--------------------------Processing Finshed 1 ----------------------------
     "-------------------------------------------------------------------------------\n")
 
 # Calcaulte the cross correlation coefficient of two different stock-return time series
-coefficient_matrix <- matrix(nrow = nrow(file), ncol = nrow(file))
+matrix_coefficient <- matrix(nrow = nrow(file), ncol = nrow(file))
 for (i in 1:nrow(file)) {
     for(j in 1:nrow(file)) {
         numerator1 <- mean(file_list[[i]] * file_list[[j]])
@@ -61,7 +61,7 @@ for (i in 1:nrow(file)) {
         denominator1 <- mean(file_list[[i]] ^ 2) - mean(file_list[[i]]) ^ 2
         denominator2 <- mean(file_list[[j]] ^ 2) - mean(file_list[[j]]) ^ 2
         denominator <- sqrt(denominator1 * denominator2)
-        coefficient_matrix[i, j] <- numerator / denominator
+        matrix_coefficient[i, j] <- numerator / denominator
     }
 }
 
@@ -72,10 +72,10 @@ cat("--------------------------Processing Finshed 2 ----------------------------
     "-------------------------------------------------------------------------------\n")
 
 # Calcaulate the length of the link connecting two different stock return time series i, j
-adjacency_matrix <- matrix(nrow = nrow(file), ncol = nrow(file))
+matrix_adjacency <- matrix(nrow = nrow(file), ncol = nrow(file))
 for (i in 1:nrow(file)) {
     for(j in 1:nrow(file)) {
-        adjacency_matrix[i, j] <- sqrt(2 * (1 -  coefficient_matrix[i, j]))
+        matrix_adjacency[i, j] <- sqrt(2 * (1 -  matrix_coefficient[i, j]))
     }
 }
 
@@ -86,13 +86,13 @@ cat("--------------------------Processing Finshed 3 ----------------------------
     "-------------------------------------------------------------------------------\n")
 
 # Plot information
-hist(adjacency_matrix,
+hist(matrix_adjacency,
      breaks = 40,
      main = "Histogram for D (the length of the link connecting two different stock return time series i, j)", 
      xlab = "D value")
 
 # Load the graph from matrix
-graph <- graph.adjacency(adjacency_matrix, mode = "undirected", weighted = TRUE)
+graph <- graph.adjacency(matrix_adjacency, mode = "undirected", weighted = TRUE)
 
 # Plot information
 plot(graph,
